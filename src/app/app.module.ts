@@ -10,6 +10,6 @@ import { AppleFormComponent } from './apple-form/apple-form.component';
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, HelloComponent, AppleFormComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppleFormComponent ]
 })
 export class AppModule { }
