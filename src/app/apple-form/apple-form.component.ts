@@ -11,7 +11,7 @@ export class AppleFormComponent implements OnInit {
 
   constructor() { }
 
-  pearName = "Jersey Pear"
+  pearName = ""
   
   ngOnInit() {
   }

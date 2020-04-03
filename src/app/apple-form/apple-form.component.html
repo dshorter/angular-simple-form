@@ -2,8 +2,15 @@
 	apple-form works!
 </p>
 <form #pear="ngForm">
-	<input type="text" id="pearName"
-    [(ngModel)]="pearName" name="pearName" >
+	<input  DqPhoneNanp
+          type="text"
+          id="pearName"
+          name="pearName"  
+          #pearModel="ngModel"
+          [(ngModel)]="pearName"  >
+	<div [hidden]="pearModel.valid || pearModel.pristine" class="alert alert-danger">
+		LE 10
+	</div>
 	<button type="submit"></button>
 	TODO: remove this: {{pearName}}
 </form>
