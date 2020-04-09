@@ -4,27 +4,32 @@ import { Directive, OnInit, forwardRef } from "@angular/core";
 @Directive({
   selector: "[DqPhoneNanp]",
   providers: [
-    { provide: NG_VALIDATORS, 
-      useExisting: DqPhoneNanpDirective, 
-      multi: true }
+    { provide: NG_VALIDATORS, useExisting: DqPhoneNanpDirective, multi: true }
   ]
 })
 export class DqPhoneNanpDirective implements Validator, OnInit {
   ngOnInit() {}
- 
+
   validate(c: FormControl) {
     let v: number = +c.value;
+    const regexStr = /(?:\([2-9][0-8]\d\)\ ?|[2-9][0-8]\d[\-\ \.\/]?)[2-9]\d{2}[- \.\/]?\d{4}\b/;
 
-    if (isNaN(v)) {
+    let regEx = new RegExp(regexStr);
+
+    if (regEx.test(c.value)) 
+      return null;
+    else 
+      return { nanp: true, stat: "aaaa" };
+
+    /*    if (isNaN(v)) {
       //  alert("Not a #"  )    ;
-      return { gte: true, requiredValue: 10 };      
-    }
-
+      return { gte: true, requiredValue: 10 };
+    
     if (v <= +10) {
-      //  alert("LTE to "  )    ;      
+      //  alert("LTE to "  )    ;
       return { gte: true, requiredValue: 10 };
     }
 
-    return null;
+    return null; */
   }
 }
