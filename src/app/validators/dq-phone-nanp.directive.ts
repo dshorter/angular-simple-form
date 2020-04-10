@@ -14,7 +14,7 @@ export class DqPhoneNanpDirective implements Validator, OnInit {
     let v: number = +c.value;
     const regexStr = /^(?:\([2-9][0-8]\d\)\ ?|[2-9][0-8]\d[\-\ \.\/]?)[2-9]\d{2}[- \.\/]?\d{4}\b$/;
 
-    let regEx = new RegExp(regexStr);
+    let regEx = new RegExp(regexStr); 
 
     if (regEx.test(c.value)) 
       return null;
