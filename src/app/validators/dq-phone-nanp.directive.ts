@@ -12,7 +12,7 @@ export class DqPhoneNanpDirective implements Validator, OnInit {
 
   validate(c: FormControl) {
     let v: number = +c.value;
-    const regexStr = /(?:\([2-9][0-8]\d\)\ ?|[2-9][0-8]\d[\-\ \.\/]?)[2-9]\d{2}[- \.\/]?\d{4}\b/;
+    const regexStr = /^(?:\([2-9][0-8]\d\)\ ?|[2-9][0-8]\d[\-\ \.\/]?)[2-9]\d{2}[- \.\/]?\d{4}\b$/;
 
     let regEx = new RegExp(regexStr);
 
